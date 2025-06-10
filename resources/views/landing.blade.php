@@ -237,11 +237,11 @@
             <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-xl-10">
                     <div class="text-center">
-                        <h3>Call To Action</h3>
+                        <h3>Contact Us</h3>
                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
                             nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
                             officia deserunt mollit anim id est laborum.</p>
-                        <a class="cta-btn" href="#">Call To Action</a>
+                        <a class="cta-btn" href="/contact">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -346,7 +346,7 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Recent Blog Posts</h2>
+            <h2>Articles</h2>
 
         </div><!-- End Section Title -->
 

@@ -19,7 +19,6 @@ class Contact extends Component
     public string $businessName = '';
     public string $businessEmail = '';
     public string $businessNumber = '';
-    public string $userRole = '';
     public string $subject = '';
     public string $message = '';
     public string $successMessage = '';
@@ -31,7 +30,6 @@ class Contact extends Component
         'businessName'=>'required|string',
         'businessEmail'=>'required|string|email',
         'businessNumber'=>'required|regex:/^\d{3}-\d{3}-\d{4}$/',
-        'userRole'=>'required|string',
         'subject'=>'required|string',
         'message'=>'required|max:5000',
     ];
@@ -43,7 +41,6 @@ class Contact extends Component
         'businessEmail.email'=>'You\'ve entered an invalid business email',
         'businessNumber.required'=>'The business number is required',
         'businessNumber.regex'=>'That is not a valid phone number',
-        'userRole.required'=>'Your role is required',
         'subject.required'=>'You need to provide a subject',
         'message.required'=>'Please tell us why you\'re reaching out',
         'message.max'=>'Your message cannot exceed 5000 characters',
@@ -70,7 +67,6 @@ class Contact extends Component
                 'businessName'=>$this->businessName,
                 'businessEmail'=>$this->businessEmail,
                 'businessNumber'=>$this->businessNumber,
-                'userRole'=>$this->userRole,
                 'subject'=>$this->subject,
                 'message'=>$this->message,
                 'submittedOn'=> date('F jS, Y \a\t g:i A', strtotime(Carbon::now())), 
@@ -108,7 +104,7 @@ class Contact extends Component
         $this->name = '';
         $this->businessName = '';
         $this->businessEmail = '';
-        $this->userRole = '';
+        $this->businessNumber = '';
         $this->subject = '';
         $this->message = '';
     }

@@ -22,7 +22,7 @@
 
         <div class="col-md-6 ">
             <input type="email" class="form-control {{ $errors->has('businessEmail') ? 'border border-danger' : '' }}"
-                wire:model="businessEmail" placeholder="Business Email">
+                wire:model="businessEmail" placeholder="Email">
 
             @error('businessEmail')
                 <span class="text-danger">{{ $message }}</span>
@@ -33,24 +33,15 @@
         <div class="col-md-6">
             <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                 class="form-control {{ $errors->has('businessNumber') ? 'border border-danger' : '' }}"
-                wire:model="businessNumber" placeholder="Business Number">
+                wire:model="businessNumber" placeholder="Number">
 
             @error('businessNumber')
                 <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
 
-        <div class="col-md-6">
-            <input type="text" class="form-control {{ $errors->has('userRole') ? 'border border-danger' : '' }}"
-                wire:model="userRole" placeholder="Your Role">
 
-            @error('userRole')
-                <span class="text-danger">{{ $message }}</span>
-            @enderror
-
-        </div>
-
-        <div class="col-md-6" class="col-md-12">
+        <div class="col">
             <input type="text" class="form-control {{ $errors->has('subject') ? 'border border-danger' : '' }}"
                 wire:model="subject" placeholder="Subject">
 
@@ -73,21 +64,22 @@
         <div class="col-md-12 text-center">
             <div class="loading" wire:loading>Loading</div>
 
-            @if ($errorMessage)
-                <div class="error-message">
-                    {{ $errorMessage }}
-
-                </div>
-            @elseif($successMessage)
-                <div class="sent-message">
-
-                    {{ $successMessage }}
-
-                </div>
-            @endif
-
             <button type="submit" wire:loading.remove>Send Message</button>
+
         </div>
+
+
+        @if ($errorMessage)
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ $errorMessage }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @elseif($successMessage)
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ $successMessage }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
 
     </div>
 </form>
