@@ -27,7 +27,7 @@
         <div x-data="iconDropdown(@entangle('icon_class'))" x-init="fetchIcons()" class="relative w-full mb-4">
             <!-- Dropdown Trigger Button -->
             <button type="button" @click="open = !open"
-                :class="open ? 'bg-slate-400 text-white' : 'bg-slate-200 text-gray-800'"
+                :class="open ? 'bg-slate-100 text-black' : 'bg-white text-gray-800'"
                 class="w-full px-4 py-3 rounded-md flex items-center justify-between shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <span class="flex items-center space-x-3">
                     <i :class="'bi ' + selected" class="text-lg"></i>

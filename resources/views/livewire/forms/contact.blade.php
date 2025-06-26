@@ -62,7 +62,7 @@
         </div>
 
         <div class="col-md-12 text-center">
-            <div class="loading" wire:loading>Loading</div>
+            <div class="loading" wire:loading>Loading...</div>
 
             <button type="submit" wire:loading.remove>Send Message</button>
 

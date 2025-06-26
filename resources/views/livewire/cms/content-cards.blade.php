@@ -1,14 +1,12 @@
 <div class="p-6 bg-gray-100 rounded-lg">
     <h3 class="text-2xl font-semibold mb-6 text-gray-800">All CMS Content</h3>
-    <a class="bg-slate-300 p-2 mt-6 mb-6 rounded hover:bg-black hover:text-white"
-        href="{{ route('cms.content.createContent') }}">Add
-        Content</a>
 
-    @if ($contentItems->isEmpty())
-        <p class="text-gray-600 mb-5">No content has been added yet</p>
-        <a class="bg-slate-300 p-2 mt-6 rounded hover:bg-black hover:text-white"
+     <a class="bg-slate-300 p-2 mt-6 rounded hover:bg-black hover:text-white"
             href="{{ route('cms.content.createContent') }}">Add
             Content</a>
+
+    @if ($contentItems->isEmpty())
+        <p class="text-gray-600 mb-5 mt-4">No content has been added yet</p>
     @else
         <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 overflow-auto">
             @foreach ($contentItems as $item)

@@ -87,10 +87,8 @@ class CmsForm extends Component
 
             $this->reset(['region', 'content', 'image', 'existingImage']);
 
-            $this->success = 'Content saved successfully!';
-
             return redirect()->to('/dashboard/cms/content/' . $this->contentID . '/editContent')
-                ->with('success', 'Content saved successfully, continue making edits here');
+                ->with('contentCreationSuccess', 'Content saved successfully, continue making edits here');
 
         } catch (\Exception $e) {
             $this->error = $e->getMessage();
