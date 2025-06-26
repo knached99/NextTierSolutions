@@ -30,7 +30,6 @@
     <link href="assets/css/main.css" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
-    <script src="//unpkg.com/alpinejs" defer></script>
 
     <!-- =======================================================
   * Template Name: Nova
@@ -54,13 +53,13 @@
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="/" class="active">Home<br></a></li>
+                    <li><a href="/" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home<br></a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
+                    {{-- <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="team.html">Team</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li class="dropdown"><a href="#"><span>Dropdown</span> <i
+                    <li><a href="blog.html">Blog</a></li> --}}
+                    {{-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                                 class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
                             <li><a href="#">Dropdown 1</a></li>
@@ -78,9 +77,19 @@
                             <li><a href="#">Dropdown 3</a></li>
                             <li><a href="#">Dropdown 4</a></li>
                         </ul>
-                    </li>
-                    <li><a href="/contact">Contact</a></li>
+                    </li> --}}
+                    <li><a href="/contact" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
+                    @if (\Auth::check())
+                        <li>
+                            <a href="{{ route('dashboard') }}">Dashboard</a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="{{ route('login') }}">Login</a>
+                        </li>
+                    @endif
                 </ul>
+
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
 
@@ -182,7 +191,10 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+
     @livewireScripts
+
     @stack('scripts')
 
 </body>

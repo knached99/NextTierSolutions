@@ -9,22 +9,23 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+     public function up()
     {
-        Schema::create('contents', function (Blueprint $table) {
-            $table->uuid('contentID')->primary;
-            $table->string('key')->unique(); // Unique identifier for each editable block
-            $table->longText('content')->nullable(); // HTML content
+        Schema::create('cms', function (Blueprint $table) {
+            $table->uuid('contentID')->primary();
+            $table->string('key')->unique();
+            $table->text('region');
+            $table->longText('content')->nullable();
+            $table->text('image')->nullable();
             $table->timestamps();
         });
+
     }
-
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('contents');
+        Schema::dropIfExists('cms');
     }
 };
