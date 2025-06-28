@@ -2,18 +2,21 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-        {!! !empty($cmsContent['hero_background']->content)
-            ? '<img src="' . asset('storage/' . $cmsContent['hero_background']->content) . '" alt="Hero Background" />'
-            : '' !!}
+        <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
 
         <div class="container">
             <div class="row">
                 <div class="col-xl-4">
-                    <h1 data-aos="fade-up">
-                        {{ $cmsContent['hero_title']['content'] ?? '' }}
-                    </h1>
+                    <h1 data-aos="fade-up">Focus On What Matters</h1>
                     <blockquote data-aos="fade-up" data-aos-delay="100">
-                        <p>{{ $cmsContent['hero_description']['content'] ?? '' }}</p>
+                        <p>To help companies we partner with make more profit by helping them give back to their teams,
+                            employees, and communities they work in. Through the efforts of focus groups and reward
+                            systems, we help build stronger work cultures, teams, and employees, that stimulate a higher
+                            production increasing revenue and profit. Through giving back to their communities, we build
+                            stronger reputations that allow their neighbors to feel confident to engage in business with
+                            our partners. Through caring for everyone, we not only make our partners more income, we
+                            enrich the quality of lives of those that make their organizations exist.
+                        </p>
                     </blockquote>
                     <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
                         <a href="#about" class="btn-get-started">Get Started</a>
@@ -35,60 +38,103 @@
             <div class="row g-0">
 
                 <div class="col-xl-5 img-bg" data-aos="fade-up" data-aos-delay="100">
-                    {!! !empty($cmsContent['why_us_image']->content)
-                        ? '<img src="' . asset('storage/' . $cmsContent['why_us_image']->content) . '" alt="Why Us" />'
-                        : '' !!}
-
-
-
-
+                    <img src="assets/img/why-us-bg.jpg" alt="">
                 </div>
 
                 <div class="col-xl-7 slides position-relative" data-aos="fade-up" data-aos-delay="200">
+
                     <div class="swiper init-swiper">
                         <script type="application/json" class="swiper-config">
-        {
-            "loop": true,
-            "speed": 600,
-            "autoplay": {
-                "delay": 5000
-            },
-            "slidesPerView": "auto",
-            "centeredSlides": true,
-            "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-            },
-            "navigation": {
-                "nextEl": ".swiper-button-next",
-                "prevEl": ".swiper-button-prev"
-            }
-        }
-    </script>
-
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "centeredSlides": true,
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  },
+                  "navigation": {
+                    "nextEl": ".swiper-button-next",
+                    "prevEl": ".swiper-button-prev"
+                  }
+                }
+              </script>
                         <div class="swiper-wrapper">
-                            @foreach ($slides as $slide)
-                                <div class="swiper-slide">
-                                    <div class="item">
-                                        <h3 class="mb-3">{{ $slide['title'] }}</h3>
-                                        <h4 class="mb-3">{{ $slide['subtitle'] }}</h4>
-                                        <p>{{ $slide['description'] }}</p>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
 
+                            <div class="swiper-slide">
+                                <div class="item">
+                                    <h3 class="mb-3">Who We Are</h3>
+                                    <h4 class="mb-3">About Us</h4>
+                                    <p>NextTier Solutions is a dedicated growth partner committed to helping small and
+                                        medium-sized businesses unlock their full potential. We believe that sustainable
+                                        success is rooted in responsible business practices and a positive workplace
+                                        culture. Our mission is to drive increased revenue and profitability by
+                                        integrating corporate social responsibility (CSR) initiatives—such as investing
+                                        in team development and engaging with local communities. We design tailored
+                                        programs that foster teamwork, motivation, and community impact, recognizing
+                                        that responsible business practices not only build trust and reputation but also
+                                        fuel long-term growth. Through focus groups, reward systems, and community
+                                        outreach, we help our clients create vibrant, motivated workplaces and stronger
+                                        community ties, leading to higher productivity and sustained success. At our
+                                        core, we see CSR as a catalyst for business growth—where ethical,
+                                        community-focused actions go hand-in-hand with increasing revenue and enriching
+                                        lives.
+                                    </p>
+                                </div>
+                            </div><!-- End slide item -->
+
+                            <div class="swiper-slide">
+                                <div class="item">
+                                    <h3 class="mb-3">What We Do </h3>
+                                    <h4 class="mb-3">Our Services</h4>
+                                    <p>NextTier Solutions partners with businesses to enhance their growth through
+                                        targeted CSR (Corporate Social Responsibility) initiatives and team development
+                                        strategies. We create and implement tailored programs focused on community
+                                        engagement, team incentives and development — all designed to strengthen company
+                                        culture, motivate employees, and improve overall productivity. Our services
+                                        include organizing community outreach projects, managing strategic reward
+                                        programs for teams, and delivering ongoing team development sessions. We work
+                                        closely with management and staff through focus groups and workshops to foster a
+                                        positive work environment and support sustained business growth. By integrating
+                                        responsible business practices with employee motivation, we help our partners
+                                        build stronger, more engaged teams and vibrant communities, ultimately driving
+                                        increased revenue and long-term success.</p>
+                                </div>
+                            </div><!-- End slide item -->
+
+                            <div class="swiper-slide">
+                                <div class="item">
+                                    <h3 class="mb-3">How It Benefits You</h3>
+                                    <h4 class="mb-3">Our Partners</h4>
+                                    <p>Partnering with NextTier Solutions helps you cultivate a motivated, efficient,
+                                        and engaged team, leading to improved performance and productivity. By investing
+                                        in your employees and engaging with your community, you strengthen your
+                                        company’s reputation and build a positive work environment. These efforts not
+                                        only enhance employee satisfaction and teamwork but also drive sustainable
+                                        business growth and increased revenue. Our programs empower your business to
+                                        reach new heights, creating a foundation for long-term success while making a
+                                        meaningful difference in your employees’ lives and your community.</p>
+                                </div>
+                            </div><!-- End slide item -->
+
+
+
+                        </div>
                         <div class="swiper-pagination"></div>
                     </div>
 
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
-
-
                 </div>
 
             </div>
+
+        </div>
 
     </section><!-- /Why Us Section -->
 
@@ -97,65 +143,106 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>
-                {{ $cmsContent['our_services_title']['content'] ?? '' }}
-
-            </h2>
-            <p>{{ $cmsContent['our_services_description']['content'] ?? '' }}
-            </p>
+            <h2>Our Services</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
         </div><!-- End Section Title -->
 
         <div class="container">
-            <div class="row gy-4 overflow-auto">
 
-                @foreach ($services as $service)
-                    <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon flex-shrink-0"><i class="bi {{ $service->icon_class }}"
-                                style="color: {{ $service->icon_color }};"></i></div>
-                        <div>
-                            <h4 class="title">{{ $service->title }}</h4>
-                            <p class="description">{{ $service->description }}</p>
-                            <a href="{{ $service->link }}" class="readmore stretched-link"><span>Learn More</span><i
-                                    class="bi bi-arrow-right"></i></a>
-                        </div>
+            <div class="row gy-4">
+
+                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon flex-shrink-0"><i class="bi bi-briefcase" style="color: #f57813;"></i></div>
+                    <div>
+                        <h4 class="title">Lorem Ipsum</h4>
+                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            excepturi sint occaecati cupiditate non provident</p>
+                        <a href="#" class="readmore stretched-link"><span>Learn More</span><i
+                                class="bi bi-arrow-right"></i></a>
                     </div>
-                    {{-- <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon flex-shrink-0" style="color: {{ $service->color }};">
-                            <i class="bi {{ $service->icon }}"></i>
-                        </div>
-                        <div>
-                            <h4 class="title">{{ $service->title }}</h4>
-                            <p class="description">{{ $service->description }}</p>
-                            @if ($service->link)
-                                <a href="{{ $service->link }}" class="readmore stretched-link">
-                                    <span>Learn More</span><i class="bi bi-arrow-right"></i>
-                                </a>
-                            @endif
-                        </div>
-                    </div> --}}
-                @endforeach
+                </div>
+                <!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon flex-shrink-0"><i class="bi bi-card-checklist" style="color: #15a04a;"></i>
+                    </div>
+                    <div>
+                        <h4 class="title">Dolor Sitema</h4>
+                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat tarad limino ata</p>
+                        <a href="#" class="readmore stretched-link"><span>Learn More</span><i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon flex-shrink-0"><i class="bi bi-bar-chart" style="color: #d90769;"></i></div>
+                    <div>
+                        <h4 class="title">Sed ut perspiciatis</h4>
+                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur</p>
+                        <a href="#" class="readmore stretched-link"><span>Learn More</span><i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon flex-shrink-0"><i class="bi bi-binoculars" style="color: #15bfbc;"></i>
+                    </div>
+                    <div>
+                        <h4 class="title">Magni Dolores</h4>
+                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                            officia deserunt mollit anim id est laborum</p>
+                        <a href="#" class="readmore stretched-link"><span>Learn More</span><i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                    <div class="icon flex-shrink-0"><i class="bi bi-brightness-high" style="color: #f5cf13;"></i>
+                    </div>
+                    <div>
+                        <h4 class="title">Nemo Enim</h4>
+                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                            blanditiis praesentium voluptatum deleniti atque</p>
+                        <a href="#" class="readmore stretched-link"><span>Learn More</span><i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
+                    <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week" style="color: #1335f5;"></i>
+                    </div>
+                    <div>
+                        <h4 class="title">Eiusmod Tempor</h4>
+                        <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+                            tempore, cum soluta nobis est eligendi</p>
+                        <a href="#" class="readmore stretched-link"><span>Learn More</span><i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div><!-- End Service Item -->
 
             </div>
-        </div>
 
+        </div>
 
     </section><!-- /Services Section -->
 
     <!-- Call To Action Section -->
     <section id="call-to-action" class="call-to-action section dark-background">
-        {!! !empty($cmsContent['cta_background_image']->content)
-            ? '<img src="' . asset('storage/' . $cmsContent['cta_background_image']->content) . '" alt="CTA Background" />'
-            : '<img src="' . asset('assets/img/cta-bg.jpg') . '" data-aos="fade-in" alt="CTA Background" />' !!}
+
+        <img src="assets/img/cta-bg.jpg" alt="">
 
         <div class="container">
             <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-xl-10">
                     <div class="text-center">
-                        <h3>{{ $cmsContent['cta_title']['content'] ?? '' }}</h3>
-                        <p>{{ $cmsContent['cta_description']['content'] ?? '' }}</p>
-                        <a class="cta-btn" href="/contact">Contact Us</a>
+                        <h3>Call To Action</h3>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                            officia deserunt mollit anim id est laborum.</p>
+                        <a class="cta-btn" href="#">Call To Action</a>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -232,8 +319,7 @@
                 </div>
                 <div class="col-lg-5 position-relative" data-aos="zoom-out" data-aos-delay="200">
                     <div class="phone-wrap">
-                        <img src="assets/img/about-page-title-bg.jpg" alt="Details" class="img-fluid" />
-                        {{-- <img src="assets/img/iphone.png" alt="Image" class="img-fluid"> --}}
+                        <img src="assets/img/iphone.png" alt="Image" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -244,12 +330,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <h4>Empowering Profitable, People-First Businesses</h4>
-                        <p>At NextTier Solutions, we help companies grow profits by giving back to their teams,
-                            employees, and communities. Through focus groups and reward systems, we strengthen workplace
-                            culture and community reputation, creating lasting success and impact.</p>
+                        <h4>Labore Sdio Lidui<br>Bonde Naruto</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam nostrum molestias
+                            doloremque quae delectus odit minima corrupti blanditiis quo animi!</p>
                         <a href="#about" class="btn-get-started">Get Started</a>
-
                     </div>
                 </div>
             </div>
@@ -262,7 +346,7 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Articles</h2>
+            <h2>Recent Blog Posts</h2>
 
         </div><!-- End Section Title -->
 

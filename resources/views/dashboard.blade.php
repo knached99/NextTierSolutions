@@ -13,8 +13,16 @@
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 overflow-auto">
                     <livewire:cms.cms-content-cards />
                 </div>
-                {{-- <livewire:forms.cms-form /> --}}
+                <hr class="border-t-2 border-indigo-300 my-6" />
+                <div class="mx-w-7xl mx-auto sm:px-6 lg:px-8 overflow-auto">
+                    <livewire:cms.testimonials-list />
+                </div>
+
+                <hr class="border-t-2 border-indigo-300 my-6" />
+
+                <div class="mx-w-7xl mx-auto sm:px-6 lg:px-8 overflow-auto">
+                    <livewire:cms.articles-list />
+                </div>
             </div>
         </div>
-    </div>
 </x-app-layout>

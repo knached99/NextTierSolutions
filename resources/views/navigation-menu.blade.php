@@ -35,6 +35,18 @@
                     </x-nav-link>
                 </div>
 
+                <div class="hidden space-x-8 sm:my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('testimonial.submit-testimonial') }}" :active="request()->routeIS('testimonial.submit-testimonial')">
+                        {{ __('Write Testimonial') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('article.create-article') }}" :active="request()->routeIS('article.create-article')">
+                        {{ __('Create Article') }}
+                    </x-nav-link>
+                </div>
+
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                         {{ __('Main Website') }}
@@ -177,6 +189,42 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link href="{{ route('cms.content.createContent') }}" :active="request()->routeIs('cms.content.createContent')">
+                {{ __('Create Content') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link href="{{ route('cms.slides.cms-slide-form') }}" :active="request()->routeIs('cms.slides.cms-slide-form')">
+                {{ __('Create Slide') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link href="{{ route('cms.service.cms-service-form') }}" :active="request()->routeIs('cms.service.cms-service-form')">
+                {{ __('Create Service') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link href="{{ route('testimonial.submit-testimonial') }}" :active="request()->routeIs('testimonial.submit-testimonial')">
+                {{ __('Write Testimonial') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link href="{{ route('article.create-article') }}" :active="request()->routeIs('article.create-article')">
+                {{ __('Create Article') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
+                {{ __('Main Website') }}
             </x-responsive-nav-link>
         </div>
 

@@ -1,10 +1,11 @@
 <div class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md">
 
-    @if (session()->has('success'))
-        <div class="mb-6 text-green-600 font-medium text-center">
-            {{ session('success') }}
-        </div>
-    @endif
+    {{-- @if ($this->success)
+        <div class="mb-4 text-emerald-400">{{ $this->success }}</div>
+    @elseif ($this->error)
+        <div class="mb-4 text-red-400">{{ $this->error }}</div>
+    @endif --}}
+
 
     <form wire:submit.prevent="save" class="space-y-6">
         <div>
@@ -53,18 +54,16 @@
             <div
                 class="flex flex-col sm:flex-row sm:items-center justify-between border rounded-md p-4 shadow-sm hover:shadow-md transition-shadow bg-gray-50">
                 <div class="flex items-center mb-3 sm:mb-0">
-                    @if ($slide->icon_class ?? false)
-                        <i class="{{ $slide->icon_class }} text-xl"
-                            style="color: {{ $slide->icon_color ?? '#000' }};"></i>
-                    @endif
+
                     <strong class="ml-3 text-lg text-gray-900">{{ $slide->title }}</strong>
                 </div>
                 <div class="flex space-x-3 justify-end">
-                    <button wire:click="edit({{ $slide->id }})"
-                        class="px-4 py-2 text-sm bg-yellow-500 text-white rounded-md hover:bg-yellow-600 transition">
+                    <a class="px-4 py-2 text-sm bg-indigo-500 text-white rounded"
+                        href="{{ route('cms.slides.edit-slide-form', ['slideID' => $slide->slideID]) }}">
                         Edit
-                    </button>
-                    <button wire:click="delete({{ $slide->id }})"
+                    </a>
+
+                    <button wire:click="delete({{ $slide->slideID }})"
                         onclick="confirm('Are you sure?') || event.stopImmediatePropagation()"
                         class="px-4 py-2 text-sm bg-red-600 text-white rounded-md hover:bg-red-700 transition">
                         Delete

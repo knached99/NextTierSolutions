@@ -1,0 +1,82 @@
+<div class="max-w-2xl mx-auto p-6 bg-white rounded shadow">
+    @if ($success)
+        <div class="mb-4 text-emerald-500">{{ $success }}</div>
+    @elseif ($error)
+        <div class="mb-4 text-red-500">{{ $error }}</div>
+    @endif
+
+    <form wire:submit.prevent="submitTestimonial" enctype="multipart/form-data">
+        <p class="text-center text-lg mb-6 font-medium text-gray-800"> Use the form below to submit a testimonial on
+            behalf of a client or partner. Please include the individual’s name, position, and company details, along
+            with their photo and company logo if available.
+            Once submitted, the testimonial will be added to the website.</p>
+
+        <!-- Name -->
+        <div class="mb-4">
+            <label class="block mb-1 text-sm font-medium">Name</label>
+            <input type="text" wire:model.defer="name" class="w-full p-2 border rounded" />
+            @error('name')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+
+        <!-- Position -->
+        <div class="mb-4">
+            <label class="block mb-1 text-sm font-medium">Position</label>
+            <input type="text" wire:model.defer="position" class="w-full p-2 border rounded" />
+            @error('position')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+
+        <!-- Company Name -->
+        <div class="mb-4">
+            <label class="block mb-1 text-sm font-medium">Company Name</label>
+            <input type="text" wire:model.defer="company_name" class="w-full p-2 border rounded" />
+            @error('company_name')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+
+        <!-- Testimonial Content -->
+        <div class="mb-4">
+            <label class="block mb-1 text-sm font-medium">Testimonial</label>
+            <textarea wire:model.defer="testimonial_content" class="w-full p-2 border rounded">
+            </textarea>
+            @error('testimonial_content')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+
+        <!-- Submitter Picture -->
+        <div class="mb-4">
+            <label class="block mb-1 text-sm font-medium">Submitter Picture (JPG, JPEG, PNG)</label>
+            <input type="file" wire:model="testimonial_submitter_picture" accept="image/jpeg,image/png"
+                class="w-full" />
+            @error('testimonial_submitter_picture')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
+            @if ($testimonial_submitter_picture)
+                <img src="{{ $testimonial_submitter_picture->temporaryUrl() }}"
+                    class="mt-2 w-32 h-32 object-cover rounded" />
+            @endif
+        </div>
+
+        <!-- Company Logo -->
+        <div class="mb-6">
+            <label class="block mb-1 text-sm font-medium">Company Logo (JPG, JPEG, PNG)</label>
+            <input type="file" wire:model="company_logo" accept="image/jpeg,image/png" class="w-full" />
+            @error('company_logo')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
+            @if ($company_logo)
+                <img src="{{ $company_logo->temporaryUrl() }}"
+                    class="mt-2 w-32 h-32 object-contain bg-gray-100 p-2 rounded" />
+            @endif
+        </div>
+
+        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 w-full">
+            Submit Testimonial
+        </button>
+    </form>
+</div>

@@ -4,6 +4,7 @@ namespace App\Livewire\Forms;
 
 use Livewire\Component;
 use App\Models\Services; 
+use Exception; 
 
 class EditServicesForm extends Component
 {
@@ -40,7 +41,28 @@ class EditServicesForm extends Component
         
     
 
-    public function editService(){
+    public function save(){
+
+        $this->validate();
+
+        try {
+        $this->service->update([
+            'title' => $this->title, 
+            'description' => $this->description,
+            'icon_class' => $this->icon_class,
+            'icon_color' => $this->icon_color,
+            'link' => $this->link,
+            'order' => $this->order,
+        ]);
+        $this->success = 'Your changes have been saved.';
+        return;
+    
+     }
+
+     catch(Exception $e){
+        $this->error = $e->getMessage();
+        return;
+     }
 
     }
 
