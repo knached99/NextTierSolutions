@@ -6,6 +6,12 @@ use App\Actions\Jetstream\DeleteUser;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Jetstream\Jetstream;
 
+use App\Actions\Jetstream\CreateTeam;
+use App\Actions\Jetstream\UpdateTeamName;
+use App\Actions\Jetstream\AddTeamMember;
+use App\Actions\Jetstream\RemoveTeamMember;
+use App\Actions\Jetstream\DeleteTeam;
+
 class JetstreamServiceProvider extends ServiceProvider
 {
     /**
@@ -24,8 +30,13 @@ class JetstreamServiceProvider extends ServiceProvider
         $this->configurePermissions();
 
         Jetstream::deleteUsersUsing(DeleteUser::class);
+        Jetstream::createTeamsUsing(CreateTeam::class);
+        Jetstream::updateTeamNamesUsing(UpdateTeamName::class);
+        Jetstream::addTeamMembersUsing(AddTeamMember::class);
+        Jetstream::removeTeamMembersUsing(RemoveTeamMember::class);
+        Jetstream::deleteTeamsUsing(DeleteTeam::class);
+    
     }
-
     /**
      * Configure the permissions that are available within the application.
      */

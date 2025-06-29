@@ -1,8 +1,12 @@
 <div class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md">
 
-    @if (session()->has('success'))
-        <div class="mb-6 text-green-600 font-medium text-center">
-            {{ session('success') }}
+    @if ($success)
+        <div class="mb-6 bg-emerald-400 text-white rounded-sm p-3 font-medium text-center">
+            {{ $success }}
+        </div>
+    @elseif($error)
+        <div class="mb-6 bg-red-400 text-white rounded-sm p-3 font-medium text-center">
+            {{ $error }}
         </div>
     @endif
 

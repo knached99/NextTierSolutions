@@ -17,7 +17,6 @@ return new class extends Migration
     $table->text('description')->nullable();
     $table->string('icon_class')->nullable(); // e.g. "bi bi-briefcase"
     $table->string('icon_color')->nullable(); // e.g. "#f57813"
-    $table->string('link')->nullable();
     $table->integer('order')->default(0);
     $table->timestamps();
 });

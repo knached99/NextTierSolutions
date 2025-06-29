@@ -2486,3 +2486,89 @@ section,
     color: color-mix(in srgb, var(--default-color), transparent 60%);
     font-size: 14px;
 }
+
+/* 
+Testimonials
+*/
+
+/* Horizontal scrollbar container */
+.testimonials-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 12px;
+    scroll-snap-type: x mandatory;
+}
+
+/* Hide vertical scrollbar if any */
+.testimonials-scroll::-webkit-scrollbar {
+    height: 10px;
+}
+
+/* Scrollbar Track */
+.testimonials-scroll::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 8px;
+}
+
+/* Scrollbar Thumb */
+.testimonials-scroll::-webkit-scrollbar-thumb {
+    background-color: #5578ff;
+    border-radius: 8px;
+}
+
+/* For Firefox */
+.testimonials-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #172231 #1a283a;
+    /* scrollbar-color: #5578ff #f0f0f0; */
+}
+
+/* Card snapping */
+.testimonial-card {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 320px;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 18px rgb(0 0 0 / 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgb(0 0 0 / 0.15);
+}
+
+/* Profile image styling */
+.testimonial-profile {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #eee;
+    margin-bottom: 1rem;
+}
+
+/* Footer styling */
+.testimonial-footer {
+    /* background: linear-gradient(135deg, #5578ff 0%, #3460e7 100%); */
+    color: white;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Company logo in footer */
+.testimonial-footer img {
+    max-height: 35px;
+}

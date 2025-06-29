@@ -1,10 +1,15 @@
 <div class="max-w-3xl mx-auto p-6 bg-white rounded shadow">
 
     @if ($success)
-        <div class="mb-4 text-emerald-400">{{ $success }}</div>
-    @elseif ($error)
-        <div class="mb-4 text-red-400">{{ $error }}</div>
+        <div class="mb-6 bg-emerald-400 text-white rounded-sm p-3 font-medium text-center">
+            {{ $success }}
+        </div>
+    @elseif($error)
+        <div class="mb-6 bg-red-400 text-white rounded-sm p-3 font-medium text-center">
+            {{ $error }}
+        </div>
     @endif
+
     <form wire:submit.prevent="save" class="mb-8 space-y-4">
 
         <div>
@@ -90,14 +95,6 @@
             <label class="block mb-1 font-semibold">Icon Color (HEX)</label>
             <input type="color" wire:model.defer="icon_color" class="w-20 h-10 p-1 border rounded" />
             @error('icon_color')
-                <span class="text-red-500">{{ $message }}</span>
-            @enderror
-        </div>
-
-        <div>
-            <label class="block mb-1 font-semibold">Link URL</label>
-            <input type="url" wire:model.defer="link" class="w-full p-2 border rounded" />
-            @error('link')
                 <span class="text-red-500">{{ $message }}</span>
             @enderror
         </div>

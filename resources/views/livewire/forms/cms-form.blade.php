@@ -1,8 +1,12 @@
 <div class="max-w-2xl mx-auto p-6 bg-white rounded shadow">
     @if ($success)
-        <div class="mb-4 text-emerald-500">{{ $success }}</div>
-    @elseif ($error)
-        <div class="mb-4 text-red-500">{{ $error }}</div>
+        <div class="mb-6 bg-emerald-400 text-white rounded-sm p-3 font-medium text-center">
+            {{ $success }}
+        </div>
+    @elseif($error)
+        <div class="mb-6 bg-red-400 text-white rounded-sm p-3 font-medium text-center">
+            {{ $error }}
+        </div>
     @endif
 
     <form wire:submit.prevent="save" enctype="multipart/form-data">

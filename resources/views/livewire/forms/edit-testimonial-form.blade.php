@@ -2,11 +2,13 @@
     <h2 class="text-2xl font-bold mb-6 text-gray-800">Edit Testimonial</h2>
 
     @if ($success)
-        <div class="mb-4 p-3 bg-green-100 text-green-700 rounded">{{ $success }}</div>
-    @endif
-
-    @if ($error)
-        <div class="mb-4 p-3 bg-red-100 text-red-700 rounded">{{ $error }}</div>
+        <div class="mb-6 bg-emerald-400 text-white rounded-sm p-3 font-medium text-center">
+            {{ $success }}
+        </div>
+    @elseif($error)
+        <div class="mb-6 bg-red-400 text-white rounded-sm p-3 font-medium text-center">
+            {{ $error }}
+        </div>
     @endif
 
     <form wire:submit.prevent="updateTestimonial" enctype="multipart/form-data" class="space-y-6">

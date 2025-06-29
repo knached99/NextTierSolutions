@@ -13,7 +13,7 @@ class EditServicesForm extends Component
     public string $css; 
     public array $icons = [];
     public string $icon; 
-    public $title, $description, $icon_class, $icon_color = '#000', $link, $order, $serviceId;
+    public $title, $description, $icon_class, $icon_color = '#000' , $order, $serviceId;
     public string $success = '';
     public string $error = '';
 
@@ -22,7 +22,6 @@ class EditServicesForm extends Component
         'description' => 'required|string',
         'icon_class' => 'required|string|max:255',
         'icon_color' => 'required|string|max:7', 
-        'link' => 'required|url',
         'order' => 'required|integer',
     ];
 
@@ -35,7 +34,6 @@ class EditServicesForm extends Component
         $this->description = $this->service->description;
         $this->icon_class = $this->service->icon_class;
         $this->icon_color = $this->service->icon_color;
-        $this->link = $this->service->link;
         $this->order = $this->service->order;
 }
         
@@ -51,7 +49,6 @@ class EditServicesForm extends Component
             'description' => $this->description,
             'icon_class' => $this->icon_class,
             'icon_color' => $this->icon_color,
-            'link' => $this->link,
             'order' => $this->order,
         ]);
         $this->success = 'Your changes have been saved.';

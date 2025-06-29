@@ -5,6 +5,7 @@ namespace App\Livewire\Forms;
 use Livewire\Component;
 use App\Models\CMSSlides;
 use Illuminate\Support\Str;
+use Exception;
 
 class CmsSlideForm extends Component
 {
@@ -12,6 +13,8 @@ class CmsSlideForm extends Component
     public $title;
     public $subtitle;
     public $description;
+    public $success = '';
+    public $error = '';
 
     public function mount(){
 
@@ -30,6 +33,8 @@ class CmsSlideForm extends Component
             'description' => 'nullable|string',
         ]);
 
+        try{
+
         CMSSlides::create([
             'slideID' => Str::uuid(),
             'title' => $this->title,
@@ -40,7 +45,18 @@ class CmsSlideForm extends Component
         $this->reset();
         $this->loadSlides();
 
-        session()->flash('success', 'Slide created!');
+        $this->success = 'Slide created and is now available on the landing page';
+        return;
+
+    }
+
+        catch(Exception $e){
+
+            $this->error = $e->getMessage();
+            return;
+        }
+
+     
     }
 
     public function render()

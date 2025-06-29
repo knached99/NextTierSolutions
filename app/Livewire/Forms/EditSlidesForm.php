@@ -18,7 +18,7 @@ class EditSlidesForm extends Component
     public $rules = [
         'title' => 'required|string|max:256',
         'subtitle' => 'required|string|max:256',
-        'description' => 'required|string|max:500',
+        'description' => 'required|string',
     ];
 
 

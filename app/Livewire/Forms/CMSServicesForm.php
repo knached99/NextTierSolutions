@@ -14,7 +14,7 @@ class CMSServicesForm extends Component
     public $css;
     public $icons = [];
     public $icon;
-    public $title, $description, $icon_class, $icon_color = '#000', $link, $order, $serviceId;
+    public $title, $description, $icon_class, $icon_color = '#000', $order, $serviceId;
     public string $success = '';
     public string $error = '';
 
@@ -23,7 +23,6 @@ class CMSServicesForm extends Component
         'description' => 'required|string',
         'icon_class' => 'required|string|max:255',
         'icon_color' => 'required|string|max:7', 
-        'link' => 'required|url',
         'order' => 'required|integer',
     ];
 
@@ -60,7 +59,6 @@ class CMSServicesForm extends Component
         $this->description = '';
         $this->icon_class = '';
         $this->icon_color = '';
-        $this->link = '';
         $this->order = null;
     }
 
@@ -71,7 +69,6 @@ class CMSServicesForm extends Component
         $this->description = $service->description;
         $this->icon_class = $service->icon_class;
         $this->icon_color = $service->icon_color;
-        $this->link = $service->link;
         $this->order = $service->order;
     }
 
@@ -125,7 +122,6 @@ class CMSServicesForm extends Component
         'description' => $this->description,
         'icon_class' => $this->icon_class,
         'icon_color' => $this->icon_color ?: '#000',
-        'link' => $this->link,
         'order' => $this->order,
     ]
 );

@@ -1,10 +1,15 @@
 <div class="max-w-3xl mx-auto p-6 bg-white rounded shadow">
 
     @if ($success)
-        <div class="mb-4 text-emerald-400">{{ $success }}</div>
-    @elseif ($error)
-        <div class="mb-4 text-red-400">{{ $error }}</div>
+        <div class="mb-6 bg-emerald-400 text-white rounded-sm p-3 font-medium text-center">
+            {{ $success }}
+        </div>
+    @elseif($error)
+        <div class="mb-6 bg-red-400 text-white rounded-sm p-3 font-medium text-center">
+            {{ $error }}
+        </div>
     @endif
+
     <form wire:submit.prevent="save" class="mb-8 space-y-4">
 
         <div>
@@ -94,13 +99,6 @@
             @enderror
         </div>
 
-        <div>
-            <label class="block mb-1 font-semibold">Link URL</label>
-            <input type="url" wire:model.defer="link" class="w-full p-2 border rounded" />
-            @error('link')
-                <span class="text-red-500">{{ $message }}</span>
-            @enderror
-        </div>
 
         <div>
             <label class="block mb-1 font-semibold">Order</label>
@@ -125,9 +123,9 @@
 
     <h3 class="text-xl font-semibold mb-4">Existing Services</h3>
 
-    <div class="space-y-4">
+    <div class="space-y-4 overflow-y-scroll">
         @foreach ($services as $service)
-            <div class="flex items-center justify-between border p-3 rounded overflow-auto">
+            <div class="flex items-center justify-between border p-3 rounded">
                 <div>
                     <i class="{{ $service->icon_class }}" style="color: {{ $service->icon_color }};"></i>
                     <strong class="ml-2">{{ $service->title }}</strong>

@@ -1,11 +1,13 @@
 <div class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md">
-
-    {{-- @if ($this->success)
-        <div class="mb-4 text-emerald-400">{{ $this->success }}</div>
-    @elseif ($this->error)
-        <div class="mb-4 text-red-400">{{ $this->error }}</div>
-    @endif --}}
-
+    @if ($success)
+        <div class="mb-6 bg-emerald-400 text-white rounded-sm p-3 font-medium text-center">
+            {{ $success }}
+        </div>
+    @elseif($error)
+        <div class="mb-6 bg-red-400 text-white rounded-sm p-3 font-medium text-center">
+            {{ $error }}
+        </div>
+    @endif
 
     <form wire:submit.prevent="save" class="space-y-6">
         <div>
