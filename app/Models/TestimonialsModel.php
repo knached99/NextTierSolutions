@@ -17,11 +17,13 @@ class TestimonialsModel extends Model
         'company_name',
         'testimonial_content',
         'testimonial_submitter_picture',
-        'company_logo'
+        'company_logo',
+        'is_public',
     ];
 
 
     protected $casts = [
         'testimonialID' => 'string',
+        'is_public' => 'boolean',
     ];
 }

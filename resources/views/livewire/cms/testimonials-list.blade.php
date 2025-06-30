@@ -9,7 +9,7 @@
     @if ($testimonials->isEmpty())
         <p class="text-gray-600 mb-5 mt-4">No testimonials have been submitted yet.</p>
     @else
-        <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 overflow-auto">
+        <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
             @foreach ($testimonials as $testimonial)
                 <a href="{{ url('/dashboard/testimonial/' . $testimonial->testimonialID . '/viewTestimonial') }}"
                     class="block">

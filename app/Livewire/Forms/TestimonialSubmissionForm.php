@@ -20,6 +20,7 @@ class TestimonialSubmissionForm extends Component
     public $testimonial_content;
     public $testimonial_submitter_picture;
     public $company_logo;
+    public $is_public = false;
     public $success = '';
     public $error = '';
 
@@ -106,12 +107,17 @@ class TestimonialSubmissionForm extends Component
                     'testimonial_content' => $this->testimonial_content,
                     'testimonial_submitter_picture' => $submitterPath,
                     'company_logo' => $companyLogoPath,
+                    'is_public' => $this->is_public,
                 ];
 
 
                 TestimonialsModel::create($submissionData);
                 $this->reset(['name', 'position', 'company_name', 'testimonial_content', 'testimonial_submitter_picture', 'company_logo']);
-                $this->success = 'Testimonial submitted and is available to view on the landing page';
+                $successMessage = $this->is_public
+                    ? 'Testimonial submitted and is available to view on the landing page.'
+                    : 'Testimonial submitted but is not public. To make it viewable, edit the testimonial and check the box to make it public.';
+                
+                $this->success = $successMessage;
                 return;
         }
 

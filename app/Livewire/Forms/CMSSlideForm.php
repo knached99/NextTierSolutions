@@ -29,8 +29,8 @@ class CmsSlideForm extends Component
     {
         $this->validate([
             'title' => 'required|string|max:255',
-            'subtitle' => 'nullable|string|max:255',
-            'description' => 'nullable|string',
+            'subtitle' => 'required|string|max:255',
+            'description' => 'required|string',
         ]);
 
         try{
@@ -42,7 +42,7 @@ class CmsSlideForm extends Component
             'description' => $this->description,
         ]);
 
-        $this->reset();
+        $this->reset(['title', 'subtitle', 'description']);
         $this->loadSlides();
 
         $this->success = 'Slide created and is now available on the landing page';

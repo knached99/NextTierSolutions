@@ -14,12 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // User::factory(10)->withPersonalTeam()->create();
 
-        User::factory()->create([
-            'name' => 'Pablo Rojas',
-            'email' => 'pablo.rojas@nexttiersolutions.com',
-            'password' => Hash::make('NextTier2025?!!')
+        User::factory()->withPersonalTeam()->create([
+            'name' => 'Khaled Nached',
+            'email' => 'khalednached@gmail.com',
+            'password' => Hash::make('MarioKart8!'),
         ]);
     }
 }

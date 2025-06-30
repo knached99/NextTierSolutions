@@ -9,7 +9,7 @@
     @if ($articles->isEmpty())
         <p class="text-gray-600 mb-5 mt-4">No articles have been published yet.</p>
     @else
-        <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 overflow-auto">
+        <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
             @foreach ($articles as $article)
                 <a href="#" class="block">
                     <div

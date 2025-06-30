@@ -15,7 +15,7 @@ class EditTestimonialForm extends Component
 {
     use WithFileUploads;
 
-    public $testimonialID, $name, $position, $company_name, $testimonial_content, $testimonial_submitter_picture, $company_logo;
+    public $testimonialID, $name, $position, $company_name, $testimonial_content, $testimonial_submitter_picture, $company_logo, $is_public;
     
     public $new_submitter_picture, $new_company_logo;
 
@@ -44,6 +44,7 @@ class EditTestimonialForm extends Component
         $this->testimonial_content = $testimonial->testimonial_content;
         $this->testimonial_submitter_picture = $testimonial->testimonial_submitter_picture;
         $this->company_logo = $testimonial->company_logo;
+        $this->is_public = $testimonial->is_public;
 
     }
 
@@ -60,7 +61,8 @@ class EditTestimonialForm extends Component
             $testimonial->position = $this->position;
             $testimonial->company_name = $this->company_name;
             $testimonial->testimonial_content = $this->testimonial_content;
-
+            $testimonial->is_public = $this->is_public;
+            
             if($this->new_submitter_picture) {
 
                 if($testimonial->testimonial_submitter_picture && Storage::disk('public')->exists($testimonial->testimonial_submitter_picture)){

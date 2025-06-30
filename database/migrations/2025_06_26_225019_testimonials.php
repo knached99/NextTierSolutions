@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('testimonial_content');
             $table->text('testimonial_submitter_picture')->nullable();
             $table->text('company_logo')->nullable();
+            $table->boolean('is_public')->default(false);
             $table->timestamps();
         });
     }

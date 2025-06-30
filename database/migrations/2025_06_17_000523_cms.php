@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('region');
             $table->longText('content')->nullable();
             $table->text('image')->nullable();
+            $table->boolean('is_public')->default(false);
             $table->timestamps();
         });
 

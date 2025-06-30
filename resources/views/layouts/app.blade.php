@@ -37,10 +37,12 @@
             </header>
         @endif
 
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
+        <x-sidebar>
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
+        </x-sidebar>
     </div>
 
     @stack('modals')

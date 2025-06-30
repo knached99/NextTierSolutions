@@ -18,6 +18,7 @@ return new class extends Migration
     $table->string('icon_class')->nullable(); // e.g. "bi bi-briefcase"
     $table->string('icon_color')->nullable(); // e.g. "#f57813"
     $table->integer('order')->default(0);
+    $table->boolean('is_public')->default(false);
     $table->timestamps();
 });
 

@@ -14,10 +14,10 @@
             <label for="title" class="block mb-2 font-semibold text-gray-700">Title</label>
             <input id="title" type="text" wire:model="title"
                 class="w-full rounded-md border px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none
-                @error('title') border-red-500 @enderror"
+                @error('title') border-red-400 @enderror"
                 placeholder="Enter slide title" />
             @error('title')
-                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                <p class="mt-1 text-sm text-red-400">{{ $message }}</p>
             @enderror
         </div>
 
@@ -25,10 +25,10 @@
             <label for="subtitle" class="block mb-2 font-semibold text-gray-700">Subtitle</label>
             <input id="subtitle" type="text" wire:model="subtitle"
                 class="w-full rounded-md border px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none
-                @error('subtitle') border-red-500 @enderror"
+                @error('subtitle') border-red-400 @enderror"
                 placeholder="Enter slide subtitle" />
             @error('subtitle')
-                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                <p class="mt-1 text-sm text-red-400">{{ $message }}</p>
             @enderror
         </div>
 
@@ -36,10 +36,10 @@
             <label for="description" class="block mb-2 font-semibold text-gray-700">Description</label>
             <textarea id="description" wire:model="description" rows="4"
                 class="w-full rounded-md border px-4 py-2 resize-none focus:ring-2 focus:ring-blue-400 focus:outline-none
-                @error('description') border-red-500 @enderror"
+                @error('description') border-red-400 @enderror"
                 placeholder="Enter slide description"></textarea>
             @error('description')
-                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                <p class="mt-1 text-sm text-red-400">{{ $message }}</p>
             @enderror
         </div>
 

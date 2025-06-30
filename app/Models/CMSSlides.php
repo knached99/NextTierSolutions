@@ -9,8 +9,8 @@ class CMSSlides extends Model
     protected $table = 'cms_slides';
     protected $primaryKey = 'slideID';
 
-    protected $fillable = ['slideID', 'title', 'subtitle', 'description'];
+    protected $fillable = ['slideID', 'title', 'subtitle', 'description', 'is_public'];
 
 
-    protected $casts = ['slideID' => 'string'];
+    protected $casts = ['slideID' => 'string', 'is_public' => 'boolean'];
 }

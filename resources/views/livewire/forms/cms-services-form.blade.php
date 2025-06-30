@@ -15,25 +15,27 @@
         <div>
 
             <label class="block mb-1 font-semibold">Title</label>
-            <input type="text" wire:model.defer="title" class="w-full p-2 border rounded" />
+            <input type="text" wire:model.defer="title"
+                class="w-full p-2 border rounded @error('title') border-red-400 @enderror" />
             @error('title')
-                <span class="text-red-500">{{ $message }}</span>
+                <span class="text-red-400">{{ $message }}</span>
             @enderror
         </div>
 
         <div>
             <label class="block mb-1 font-semibold">Description</label>
-            <textarea wire:model.defer="description" class="w-full p-2 border rounded"></textarea>
+            <textarea wire:model.defer="description"
+                class="w-full p-2 border rounded @error('description') border-red-400 @enderror"></textarea>
             @error('description')
-                <span class="text-red-500">{{ $message }}</span>
+                <span class="text-red-400">{{ $message }}</span>
             @enderror
         </div>
 
-        <div x-data="iconDropdown(@entangle('icon_class'))" x-init="fetchIcons()" class="relative w-full mb-4">
+        <div x-data="iconDropdown(@entangle('icon_class'))" x-init="fetchIcons()" class="relative w-full mb-4 ">
             <!-- Dropdown Trigger Button -->
             <button type="button" @click="open = !open"
                 :class="open ? 'bg-slate-100 text-black' : 'bg-white text-gray-800'"
-                class="w-full px-4 py-3 rounded-md flex items-center justify-between shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                class="w-full px-4 py-3 rounded-md flex items-center justify-between shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 ">
                 <span class="flex items-center space-x-3">
                     <i :class="'bi ' + selected" class="text-lg"></i>
                     <span x-text="selected ? formatLabel(selected) : 'Choose an icon'" class="font-medium"></span>
@@ -51,7 +53,7 @@
                     class="w-full px-4 py-2 border-b border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" />
 
                 <!-- Scrollable Icons List -->
-                <ul style="max-height: 250px; overflow-y: auto; display: block;" class="divide-y divide-gray-100">
+                <ul style="max-height: 250px; overflow-y: auto; display: block;" class="divide-y divide-gray-100 ">
                     <!-- Skeleton Loader -->
                     <template x-if="loading">
                         <template x-for="i in 6" :key="i">
@@ -84,7 +86,7 @@
                 </ul>
             </div>
             @error('icon_class')
-                <span class="text-red-500">{{ $message }}</span>
+                <span class="text-red-400">{{ $message }}</span>
             @enderror
         </div>
 
@@ -93,18 +95,20 @@
 
         <div>
             <label class="block mb-1 font-semibold">Icon Color (HEX)</label>
-            <input type="color" wire:model.defer="icon_color" class="w-20 h-10 p-1 border rounded" />
+            <input type="color" wire:model.defer="icon_color"
+                class="w-20 h-10 p-1 border rounded @error('icon_color') border-red-400 @enderror" />
             @error('icon_color')
-                <span class="text-red-500">{{ $message }}</span>
+                <span class="text-red-400">{{ $message }}</span>
             @enderror
         </div>
 
 
         <div>
             <label class="block mb-1 font-semibold">Order</label>
-            <input type="number" wire:model.defer="order" class="w-full p-2 border rounded" />
+            <input type="number" wire:model.defer="order"
+                class="w-full p-2 border rounded @error('order') border-red-400 @enderror" />
             @error('order')
-                <span class="text-red-500">{{ $message }}</span>
+                <span class="text-red-400">{{ $message }}</span>
             @enderror
         </div>
 

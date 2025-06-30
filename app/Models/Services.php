@@ -10,8 +10,11 @@ class Services extends Model
 
     protected $primaryKey = 'serviceID';
 
-    protected $fillable = [ 'serviceID', 'title', 'description', 'icon_class', 'icon_color', 'order'];
+    protected $fillable = [ 'serviceID', 'title', 'description', 'icon_class', 'icon_color', 'order', 'is_public'];
 
         public $incrementing = false; 
         protected $keyType = 'string'; 
+
+            protected $casts = ['serviceID' => 'string', 'is_public' => 'boolean'];
+
 }

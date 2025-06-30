@@ -90,6 +90,27 @@
             @enderror
         </div>
 
+        <!-- Toggle Testimonial Visibility -->
+        <div class="mb-6">
+            <label class="inline-flex items-center space-x-2 mt-5">
+                <input type="checkbox" wire:model.defer="is_public"
+                    class="form-checkbox h-5 w-5 text-blue-600 transition duration-150 ease-in-out">
+                <span class="text-gray-700 font-medium">Toggle Testimonial Visibility</span>
+            </label>
+
+            <div class="mt-2 text-sm text-gray-600"
+                @if ($is_public) style="display:block;" @else style="display:none;" @endif>
+                <i class="bi bi-eye h-20 w-20"></i> This testimonial is
+                <span class="font-semibold text-green-600">public</span>.
+            </div>
+
+            <div class="mt-2 text-sm text-gray-600"
+                @if (!$is_public) style="display:block;" @else style="display:none;" @endif>
+                <i class="bi bi-eye-slash h-20 w-20"></i> This testimonial is
+                <span class="font-semibold text-red-600">hidden</span>.
+            </div>
+        </div>
+
         <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
             Update Testimonial
         </button>

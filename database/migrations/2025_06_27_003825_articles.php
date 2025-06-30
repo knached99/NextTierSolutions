@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('content');
             $table->string('article_post_image_path')->nullable();
+            $table->boolean('is_public')->default(false);
             $table->timestamps();
         });
     }

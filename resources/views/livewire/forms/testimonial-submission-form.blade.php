@@ -79,6 +79,27 @@
             @endif
         </div>
 
+        <!-- Determine if testimonial will be shown or hidden -->
+        <div x-data="{ isPublic: false }" class="mb-6">
+            <span class=" text-gray-500">By default, this testimonial will be hidden, you must check the box to
+                make it
+                public</span>
+            <label class="inline-flex items-center space-x-2 mt-5">
+                <input type="checkbox" x-model="isPublic" wire:model.defer="is_public"
+                    class="form-checkbox h-5 w-5 text-blue-600 transition duration-150 ease-in-out">
+                <span class="text-gray-700 font-medium">Toggle Testimonial Visibility</span>
+            </label>
+
+            <div class="mt-2 text-sm text-gray-600" x-show="isPublic" x-transition>
+                <i class="bi bi-eye h-20 w-20"></i> This testimonial will be <span
+                    class="font-semibold text-green-600">public</span>.
+            </div>
+            <div class="mt-2 text-sm text-gray-600" x-show="!isPublic" x-transition>
+                <i class="bi bi-eye-slash h-20 w-20"></i> This testimonial will remain <span
+                    class="font-semibold text-red-600">hidden</span>.
+            </div>
+        </div>
+
         <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 w-full">
             Submit Testimonial
         </button>

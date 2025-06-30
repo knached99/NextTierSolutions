@@ -85,8 +85,8 @@ class Contact extends Component
             $this->errorMessage = 'Something went wrong, please email us directly at '.config('mail.from.address');
             $this->resetForm();
 
-            \Log::error('The followign exception: '.e->getMessage().' was caught in the '.__FUNCTION__ .' method in the '.__CLASS__. ' class');
-            \Log::info('Contact submission details: '.$data);
+            \Log::error('The following exception: '.$e->getMessage().' was caught in the '.__FUNCTION__ .' method in the '.__CLASS__. ' class');
+            \Log::info('Contact submission details: '.implode('',$data));
             \Log::info('Submitted on '. date('F jS, Y \a\t g:i A ', strtotime(Carbon::now())));
 
           

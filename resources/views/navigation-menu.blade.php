@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-gray-700 border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -16,43 +16,6 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-
-                <div class="hidden space-x-8 sm:my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('cms.content.createContent') }}" :active="request()->routeIs('cms.content.createContent')">
-                        {{ __('Create Content') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('cms.slides.cms-slide-form') }}" :active="request()->routeIs('cms.slides.cms-slide-form')">
-                        {{ __('Create Slide') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('cms.service.cms-service-form') }}" :active="request()->routeIs('cms.service.cms-service-form')">
-                        {{ __('Create Service') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('testimonial.submit-testimonial') }}" :active="request()->routeIS('testimonial.submit-testimonial')">
-                        {{ __('Write Testimonial') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('article.create-article') }}" :active="request()->routeIS('article.create-article')">
-                        {{ __('Create Article') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
-                        {{ __('Main Website') }}
-                    </x-nav-link>
-                </div>
-
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -63,7 +26,7 @@
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
-                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
+                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-300 bg-none hover:text-white focus:outline-none focus:bg-gray-200 focus:text-black active:bg-gray-200 transition ease-in-out duration-150">
                                         {{ Auth::user()->currentTeam->name }}
 
                                         <svg class="ms-2 -me-0.5 size-4" xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +87,7 @@
                             @else
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
-                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
+                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-300 bg-none hover:text-white focus:outline-none focus:bg-gray-200 focus:text-black active:bg-gray-200 transition ease-in-out duration-150">
                                         {{ Auth::user()->name }}
 
                                         <svg class="ms-2 -me-0.5 size-4" xmlns="http://www.w3.org/2000/svg"
@@ -189,42 +152,6 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-        </div>
-
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('cms.content.createContent') }}" :active="request()->routeIs('cms.content.createContent')">
-                {{ __('Create Content') }}
-            </x-responsive-nav-link>
-        </div>
-
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('cms.slides.cms-slide-form') }}" :active="request()->routeIs('cms.slides.cms-slide-form')">
-                {{ __('Create Slide') }}
-            </x-responsive-nav-link>
-        </div>
-
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('cms.service.cms-service-form') }}" :active="request()->routeIs('cms.service.cms-service-form')">
-                {{ __('Create Service') }}
-            </x-responsive-nav-link>
-        </div>
-
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('testimonial.submit-testimonial') }}" :active="request()->routeIs('testimonial.submit-testimonial')">
-                {{ __('Write Testimonial') }}
-            </x-responsive-nav-link>
-        </div>
-
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('article.create-article') }}" :active="request()->routeIs('article.create-article')">
-                {{ __('Create Article') }}
-            </x-responsive-nav-link>
-        </div>
-
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
-                {{ __('Main Website') }}
             </x-responsive-nav-link>
         </div>
 

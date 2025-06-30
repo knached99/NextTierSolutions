@@ -16,7 +16,8 @@ class ArticlesModel extends Model
         'slug',
         'content',
         'article_post_image_path',
+        'is_public'
     ];
 
-    protected $casts = ['articleID' => 'string'];
+    protected $casts = ['articleID' => 'string', 'is_public' => 'boolean'];
 }

@@ -17,13 +17,13 @@
 
             <div>
                 <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full p-3 text-lg" type="email" name="email"
-                    :value="old('email')" required autofocus autocomplete="username" />
+                <x-input id="email" class="block mt-1 w-full p-3" type="email" name="email" :value="old('email')"
+                    required autofocus autocomplete="username" />
             </div>
 
             <div class="mt-4">
                 <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full p-3 text-lg" type="password" name="password" required
+                <x-input id="password" class="block mt-1 w-full p-3" type="password" name="password" required
                     autocomplete="current-password" />
             </div>
 
